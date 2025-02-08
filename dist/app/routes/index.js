@@ -12,6 +12,7 @@ const cart_route_1 = require("../modules/Cart/cart.route");
 const about_route_1 = require("../modules/About/about.route");
 const payment_route_1 = require("../modules/Payment/payment.route");
 const email_route_1 = require("../modules/Email/email.route");
+const blog_route_1 = require("../modules/Blog/blog.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
     {
@@ -45,6 +46,10 @@ const moduleRoutes = [
     {
         path: "/email",
         route: email_route_1.emailRoutes,
+    },
+    {
+        path: "/blog",
+        route: blog_route_1.blogRoutes,
     },
     // {
     //   path: "/admin",

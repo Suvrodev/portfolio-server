@@ -7,6 +7,7 @@ import { cartRoutes } from "../modules/Cart/cart.route";
 import { aboutRoutes } from "../modules/About/about.route";
 import { paymentRoutes } from "../modules/Payment/payment.route";
 import { emailRoutes } from "../modules/Email/email.route";
+import { blogRoutes } from "../modules/Blog/blog.route";
 
 const router = express.Router();
 
@@ -42,6 +43,10 @@ const moduleRoutes = [
   {
     path: "/email",
     route: emailRoutes,
+  },
+  {
+    path: "/blog",
+    route: blogRoutes,
   },
   // {
   //   path: "/admin",
