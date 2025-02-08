@@ -26,7 +26,7 @@ app.use(
 app.use("/api", router);
 
 const getAController = async (req: Request, res: Response) => {
-  res.send("Book Shop Back end Assignment-4");
+  res.send("Welcome to Suvrodeb Portfolio");
 };
 app.get("/", getAController);
 

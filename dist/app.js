@@ -32,7 +32,7 @@ app.use((0, cors_1.default)({
 // app.use("/api", OrderRoutes);
 app.use("/api", routes_1.default);
 const getAController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send("Book Shop Back end Assignment-4");
+    res.send("Welcome to Suvrodeb Portfolio");
 });
 app.get("/", getAController);
 //Global Error Handler
