@@ -13,7 +13,7 @@ const createBlog: RequestHandler = async (req, res, next) => {
 
     //Send Response
     res.status(200).json({
-      message: "Blog Addedsuccessfully",
+      message: "Blog Added successfully",
       success: true,
       data: result,
     });
@@ -25,7 +25,6 @@ const createBlog: RequestHandler = async (req, res, next) => {
 // Get All Blog
 const getAllBlog: RequestHandler = async (req, res, next) => {
   try {
-    const id = req?.params?.id;
     const result = await BlogServices.getAllBlog();
 
     // Send response with the results

@@ -9,18 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogControllers = void 0;
-const blog_service_1 = require("./blog.service");
-//Create Blog
-const createBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+exports.ProjectControllers = void 0;
+const project_service_1 = require("./project.service");
+//Create Project
+const createProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const blog = req.body;
-        console.log("Blog Body: ", blog);
+        const project = req.body;
+        console.log("Project Body: ", project);
         //will call service function to send data in db
-        const result = yield blog_service_1.BlogServices.createBlogIntoDB(blog);
+        const result = yield project_service_1.ProjectServices.createProjectIntoDB(project);
         //Send Response
         res.status(200).json({
-            message: "Blog Added successfully",
+            message: "Project Added successfully",
             success: true,
             data: result,
         });
@@ -29,13 +29,13 @@ const createBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         next(error);
     }
 });
-// Get All Blog
-const getAllBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+// Get All project
+const getAllProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield blog_service_1.BlogServices.getAllBlog();
+        const result = yield project_service_1.ProjectServices.getAllProject();
         // Send response with the results
         res.status(200).json({
-            message: "Blog retrieved successfully",
+            message: "Project retrieved successfully",
             status: true,
             data: result,
         });
@@ -44,15 +44,15 @@ const getAllBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         next(error);
     }
 });
-// Get Single Blog
-const getSingleBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+// Get Single project
+const getSingleProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const blogId = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.id;
-        const result = yield blog_service_1.BlogServices.getSingleBlogFromDB(blogId);
+        const projectId = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.id;
+        const result = yield project_service_1.ProjectServices.getSingleProjectFromDB(projectId);
         // Send response with the results
         res.status(200).json({
-            message: "Blog retrieved successfully",
+            message: "Project retrieved successfully",
             status: true,
             data: result,
         });
@@ -61,14 +61,14 @@ const getSingleBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         next(error);
     }
 });
-//Delete Blog
-const deleteBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+//Delete Project
+const deleteProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const blogId = req.params.id;
-        const result = yield blog_service_1.BlogServices.deleteBlogFromDB(blogId);
+        const result = yield project_service_1.ProjectServices.deletProjectFromDB(blogId);
         //Send Response
         res.status(200).json({
-            message: "Blog deleted successfully ",
+            message: "Project deleted successfully ",
             status: true,
             data: result,
         });
@@ -77,12 +77,12 @@ const deleteBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         next(error);
     }
 });
-//Update Blog
-const updateBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+//Update Project
+const updateProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const blogId = req.params.id;
         const blogBody = req === null || req === void 0 ? void 0 : req.body;
-        const result = yield blog_service_1.BlogServices.updateBlogFromDB(blogId, blogBody);
+        const result = yield project_service_1.ProjectServices.updateProjectFromDB(blogId, blogBody);
         //Send Response
         res.status(200).json({
             message: "Blog updated successfully From Cart",
@@ -94,10 +94,10 @@ const updateBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         next(error);
     }
 });
-exports.BlogControllers = {
-    createBlog,
-    getAllBlog,
-    getSingleBlog,
-    deleteBlog,
-    updateBlog,
+exports.ProjectControllers = {
+    createProject,
+    getAllProject,
+    getSingleProject,
+    deleteProject,
+    updateProject,
 };
