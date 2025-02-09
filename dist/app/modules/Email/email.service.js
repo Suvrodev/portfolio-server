@@ -28,8 +28,19 @@ const deleteEmailFromDB = (emailId) => __awaiter(void 0, void 0, void 0, functio
     const result = yield email_model_1.EmailModel.findByIdAndDelete({ _id: emailId });
     return result;
 });
+//update Email
+const updateEmailFromDB = (emailId, emailData) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("Come Email id in Service: ", emailId);
+    console.log("Come Email Data in Service: ", emailData);
+    //   const result = await EmailModel.findByIdAndDelete({ _id: emailId });
+    const result = yield email_model_1.EmailModel.findByIdAndUpdate({ _id: emailId }, emailData, {
+        new: true,
+    });
+    return result;
+});
 exports.emailService = {
     createEmailIntoDB,
     getAllEmailFromDB,
     deleteEmailFromDB,
+    updateEmailFromDB,
 };

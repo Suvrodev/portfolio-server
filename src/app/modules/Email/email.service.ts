@@ -22,8 +22,24 @@ const deleteEmailFromDB = async (emailId: string) => {
   return result;
 };
 
+//update Email
+const updateEmailFromDB = async (emailId: string, emailData: TEmail) => {
+  console.log("Come Email id in Service: ", emailId);
+  console.log("Come Email Data in Service: ", emailData);
+  //   const result = await EmailModel.findByIdAndDelete({ _id: emailId });
+  const result = await EmailModel.findByIdAndUpdate(
+    { _id: emailId },
+    emailData,
+    {
+      new: true,
+    }
+  );
+  return result;
+};
+
 export const emailService = {
   createEmailIntoDB,
   getAllEmailFromDB,
   deleteEmailFromDB,
+  updateEmailFromDB,
 };

@@ -60,8 +60,27 @@ const deleteEmail = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
         next(error);
     }
 });
+//Delete Cart
+const updateEmail = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const emailId = req.params.id;
+        const emailBody = req === null || req === void 0 ? void 0 : req.body;
+        console.log("Email id: ", emailId);
+        const result = yield email_service_1.emailService.updateEmailFromDB(emailId, emailBody);
+        //Send Response
+        res.status(200).json({
+            message: "Email Updated successfully",
+            status: true,
+            data: result,
+        });
+    }
+    catch (error) {
+        next(error);
+    }
+});
 exports.EmailControllers = {
     createEmail,
     getAllEmail,
     deleteEmail,
+    updateEmail,
 };

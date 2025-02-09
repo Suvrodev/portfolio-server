@@ -9,5 +9,6 @@ const router = express.Router();
 router.post("/", EmailControllers.createEmail);
 router.get("/", EmailControllers.getAllEmail);
 router.delete("/:id", EmailControllers.deleteEmail);
+router.patch("/update/:id", EmailControllers.updateEmail);
 
 export const emailRoutes = router;

@@ -57,8 +57,28 @@ const deleteEmail: RequestHandler = async (req, res, next) => {
   }
 };
 
+//Delete Cart
+const updateEmail: RequestHandler = async (req, res, next) => {
+  try {
+    const emailId = req.params.id;
+    const emailBody = req?.body;
+    console.log("Email id: ", emailId);
+    const result = await emailService.updateEmailFromDB(emailId, emailBody);
+
+    //Send Response
+    res.status(200).json({
+      message: "Email Updated successfully",
+      status: true,
+      data: result,
+    });
+  } catch (error: any) {
+    next(error);
+  }
+};
+
 export const EmailControllers = {
   createEmail,
   getAllEmail,
   deleteEmail,
+  updateEmail,
 };
