@@ -19,7 +19,7 @@ const createEmailIntoDB = (emailData) => __awaiter(void 0, void 0, void 0, funct
 });
 // Get all Email
 const getAllEmailFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield email_model_1.EmailModel.find();
+    const result = yield email_model_1.EmailModel.find().sort({ createdAt: -1 });
     return result;
 });
 //delete Email

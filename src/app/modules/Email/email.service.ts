@@ -11,7 +11,7 @@ const createEmailIntoDB = async (emailData: TEmail) => {
 
 // Get all Email
 const getAllEmailFromDB = async () => {
-  const result = await EmailModel.find();
+  const result = await EmailModel.find().sort({ createdAt: -1 });
   return result;
 };
 

@@ -3,7 +3,7 @@ import { TEmail } from "./email.interface";
 
 const emailSchema = new Schema<TEmail>(
   {
-    subject: { type: String, required: [true, "Subject is required"] },
+    name: { type: String, required: [true, "Name is required"] },
     email: {
       type: String,
       required: [true, "Email is required"],
