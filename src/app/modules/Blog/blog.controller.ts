@@ -7,7 +7,7 @@ import { BlogServices } from "./blog.service";
 const createBlog: RequestHandler = async (req, res, next) => {
   try {
     const blog = req.body;
-    console.log("Blog Body: ", blog);
+
     //will call service function to send data in db
     const result = await BlogServices.createBlogIntoDB(blog);
 

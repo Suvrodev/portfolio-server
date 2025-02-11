@@ -7,7 +7,7 @@ import { ProjectServices } from "./project.service";
 const createProject: RequestHandler = async (req, res, next) => {
   try {
     const project = req.body;
-    console.log("Project Body: ", project);
+    console.log("Project Body-------------------------------------: ", project);
     //will call service function to send data in db
     const result = await ProjectServices.createProjectIntoDB(project);
 

@@ -15,7 +15,7 @@ const project_service_1 = require("./project.service");
 const createProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const project = req.body;
-        console.log("Project Body: ", project);
+        console.log("Project Body-------------------------------------: ", project);
         //will call service function to send data in db
         const result = yield project_service_1.ProjectServices.createProjectIntoDB(project);
         //Send Response

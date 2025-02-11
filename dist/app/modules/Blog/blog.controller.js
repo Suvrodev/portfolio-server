@@ -15,7 +15,6 @@ const blog_service_1 = require("./blog.service");
 const createBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const blog = req.body;
-        console.log("Blog Body: ", blog);
         //will call service function to send data in db
         const result = yield blog_service_1.BlogServices.createBlogIntoDB(blog);
         //Send Response

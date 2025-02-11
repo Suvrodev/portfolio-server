@@ -13,7 +13,9 @@ exports.BlogServices = void 0;
 const blog_model_1 = require("./blog.model");
 //create Blog By Admin
 const createBlogIntoDB = (blogData) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("In blog service: ----------------------------", blogData);
     const result = yield blog_model_1.BlogModel.create(blogData);
+    console.log("Now Result##########################", result);
     return result;
 });
 ///Get All Blog
