@@ -9,6 +9,7 @@ const auth_route_1 = require("../modules/Auth/auth.route");
 const email_route_1 = require("../modules/Email/email.route");
 const blog_route_1 = require("../modules/Blog/blog.route");
 const project_route_1 = require("../modules/Project/project.route");
+const resume_route_1 = require("../modules/Resume/resume.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
     {
@@ -30,6 +31,10 @@ const moduleRoutes = [
     {
         path: "/project",
         route: project_route_1.projectRoutes,
+    },
+    {
+        path: "/resume",
+        route: resume_route_1.resumeRoutes,
     },
 ];
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

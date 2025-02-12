@@ -4,6 +4,7 @@ import { AuthRoutes } from "../modules/Auth/auth.route";
 import { emailRoutes } from "../modules/Email/email.route";
 import { blogRoutes } from "../modules/Blog/blog.route";
 import { projectRoutes } from "../modules/Project/project.route";
+import { resumeRoutes } from "../modules/Resume/resume.route";
 
 const router = express.Router();
 
@@ -28,6 +29,10 @@ const moduleRoutes = [
   {
     path: "/project",
     route: projectRoutes,
+  },
+  {
+    path: "/resume",
+    route: resumeRoutes,
   },
 ];
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

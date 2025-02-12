@@ -58,8 +58,8 @@ const getSingleProject: RequestHandler = async (req, res, next) => {
 //Delete Project
 const deleteProject: RequestHandler = async (req, res, next) => {
   try {
-    const blogId = req.params.id;
-    const result = await ProjectServices.deletProjectFromDB(blogId);
+    const projectId = req.params.id;
+    const result = await ProjectServices.deletProjectFromDB(projectId);
 
     //Send Response
     res.status(200).json({
@@ -81,7 +81,7 @@ const updateProject: RequestHandler = async (req, res, next) => {
 
     //Send Response
     res.status(200).json({
-      message: "Blog updated successfully From Cart",
+      message: "Project updated successfully",
       status: true,
       data: result,
     });

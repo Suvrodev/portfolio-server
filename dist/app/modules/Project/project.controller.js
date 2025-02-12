@@ -64,8 +64,8 @@ const getSingleProject = (req, res, next) => __awaiter(void 0, void 0, void 0, f
 //Delete Project
 const deleteProject = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const blogId = req.params.id;
-        const result = yield project_service_1.ProjectServices.deletProjectFromDB(blogId);
+        const projectId = req.params.id;
+        const result = yield project_service_1.ProjectServices.deletProjectFromDB(projectId);
         //Send Response
         res.status(200).json({
             message: "Project deleted successfully ",
@@ -85,7 +85,7 @@ const updateProject = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         const result = yield project_service_1.ProjectServices.updateProjectFromDB(blogId, blogBody);
         //Send Response
         res.status(200).json({
-            message: "Blog updated successfully From Cart",
+            message: "Project updated successfully",
             status: true,
             data: result,
         });
